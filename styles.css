@@ -1,0 +1,485 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sony{
+    background-color: black;
+    height: 6vh;
+    display: flex;
+    justify-content: space-between;
+}
+.play .logo{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.but{
+    width: 97%;
+    height: 50px;
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+    margin-top: 5px;
+      
+}
+button{
+    background-color: #000;
+    color: #fff;
+    margin: 15px;
+    border-radius: 10px;
+    height: 25px;
+    width: 90px;
+    margin-top: 10px;
+}
+.menu{
+    display: flex;
+}
+#menu-deroulant, #menu-deroulant ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+#menu-deroulant {
+/* on centre le menu dans la page */
+    text-align: center;
+    flex-direction: row;
+    margin-top: 20px;
+    position: absolute;
+    margin-left: 5%;
+}
+#menu-deroulant li {
+/* on place les liens du menu horizontalement */
+    display: inline-block;
+    justify-content: center;
+    margin-left: 10px;
+}
+#menu-deroulant ul li {
+/* on enlève ce comportement pour les liens du sous menu */
+    display: inherit;
+}
+#menu-deroulant a {
+    text-decoration: none;
+    display: block;
+	color:#000;
+}
+#menu-deroulant ul {
+    position: absolute;
+/* on cache les sous menus complètement sur la gauche */
+    left: -999em;
+    text-align: left;
+    z-index: 1000;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+#menu-deroulant li:hover ul {
+/* Au survol des li du menu on replace les sous menus */
+    left: auto;
+}
+#matériel li{
+    display:inline-block;
+    position:relative;
+    border-radius:8px 8px 0 0;
+    }
+    #matériel ul li{
+    display:inherit;
+    border-radius:0;
+    }
+    #matériel ul li:hover{
+    border-radius:0;
+    }
+    #matériel ul li:last-child{
+    border-radius:0 0 8px 8px;
+    }
+    #matériel ul{
+    position:absolute;
+    z-index: 1000;
+    max-height:0;
+    left: 0;
+    right: 0;
+
+    
+    overflow:hidden;
+    -moz-transition: .8s all .3s;
+    -webkit-transition: .8s all .3s;
+    transition: .8s all .3s;
+    }
+    #matériel li:hover ul{
+    max-height:15em;
+    }
+    /* background des liens menus */
+    #matériel li:first-child{
+    background-color: #65537A;
+    background-image:-webkit-linear-gradient(top, #65537A 0%, #2A2333 100%);
+    background-image:linear-gradient(to bottom, #65537A 0%, #2A2333 100%);
+    }
+    #matériel li:nth-child(2){
+    background-color: #729EBF;
+    background-image: -webkit-linear-gradient(top, #729EBF 0%, #333A40 100%);
+    background-image:linear-gradient(to bottom, #729EBF 0%, #333A40 100%);
+    }
+    #matériel li:nth-child(3){
+    background-color: #F6AD1A;
+    background-image:-webkit-linear-gradient(top, #F6AD1A 0%, #9F391A 100%);
+    background-image:linear-gradient(to bottom, #F6AD1A 0%, #9F391A 100%);
+    }
+    #matériel li:last-child{
+    background-color: #CFFF6A;
+    background-image:-webkit-linear-gradient(top, #CFFF6A 0%, #677F35 100%);
+    background-image:linear-gradient(to bottom, #CFFF6A 0%, #677F35 100%);
+    }
+    /* background des liens sous menus */
+    #matériel li:first-child li{
+    background:#2A2333;
+    }
+    #matériel li:nth-child(2) li{
+    background:#333A40;
+    }
+    #matériel li:nth-child(3) li{
+    background:#9F391A;
+    }
+    #matériel li:last-child li{
+    background:#677F35;
+    }
+    /* background des liens menus et sous menus au clic */
+    #matériel li:first-child:hover, #matériel li:first-child li:hover{
+    background:#65537A;
+    }
+    #matériel2 li:nth-child(2):hover, #matériel li:nth-child(2) li:hover{
+    background:#729EBF;
+    }
+    #matériel li:nth-child(3):hover, #matériel2 li:nth-child(3) li:hover{
+    background:#F6AD1A;
+    }
+    #matériel li:last-child:hover, #matériel li:last-child li:hover{
+    background:#CFFF6A;
+    }
+    /* les a href */
+    #matériel a{
+    text-decoration:none;
+    display:block;
+    padding:8px 32px;
+    color:#fff;
+    font-family:arial;
+    }
+    #matériel ul a{
+    padding:8px 0;
+    }
+    #matériel li:hover li a{
+    color:#fff;
+    text-transform:inherit;
+    }
+    #matériel li:hover a, #matériel li li:hover a{
+    color:#000;
+    }
+
+    .bloc-blanc{
+        background-color: white;
+        width: 100vw;
+    }
+    .bouton{
+        justify-content: space-between;
+        margin-right: 10%;
+        position: absolute;
+    }
+    .images{
+        width: 100%;
+        top: 99px;
+    }
+    .d3{
+        width: 100%;
+        height: 90vh;
+        background-color: #ededed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: fondu 15s ease-in-out infinite both;
+    }
+    .d3:hover{
+        animation-play-state: paused;
+    }
+    @keyframes fondu{
+        0%{background-image: url("./play-img/gran-turismo-7-keyart-01-en-23oct20.webp");}
+        20%{background-image: url("./play-img/horizon-forbidden-west-store-art-01-01apr21$en.webp");}
+        60%{background-image: url("./play-img/gran-turismo-7-keyart-01-en-23oct20.webp");}
+        80%{background-image: url("./play-img/god-of-war-pack-en-zz-06apr18.webp");}
+        100%{background-image: url("./play-img/fifa-22-ps-plus-igc-homepage-hero-banner-desktop-01-ps4-ps5-en-14apr22.webp");}
+    }
+    .slide{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    } 
+    .slide .image{
+        margin-left: 10px;
+    }
+    .slide .image img{
+        border-radius: 10px;
+        opacity: 0.6;
+    }
+    .slide .image img:hover{
+        padding: 2px;
+        border: solid 2px blue;
+        opacity: 1;
+    }
+    .commit{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .chap{
+        margin-left: 10%;
+        position: relative;
+    }
+    
+    .chap .play5{
+        margin-top: 10%;
+    }
+    .chap .play5 p{
+        margin-top: 5%;
+    }
+    .chap .play5 button{
+        margin-top: 5%;
+
+    }
+    .duk{
+        justify-content: center;
+        width: 50px;
+        margin-top: 20px;
+    }
+    .duk button{
+        height: 50px;
+        width: 250px;
+        background-color: rgb(45, 100, 230);
+        border-color: rgb(45, 100, 230);
+        border-radius: 20px;
+        font-size: large;
+    }
+    .imager{
+        display: flex;
+        align-items: center;
+        margin-top: 100px;
+        height: 10vh;
+        width: 90%;
+    }
+    .imager .doublure{
+        margin-left: 7%;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .imager .doublure:hover{
+        padding: 2px;
+        border: solid 2px blue;
+        
+    }
+    .imager p{
+        text-align: center;
+    }
+    .one{
+        margin-top: 80px;
+    }
+
+    .poster{
+        background-image: url('./play-img/ps-plus-this-month-on-plus-background-desktop-en-02-25mar21.webp');
+        background-size: cover;
+        position: relative;
+        height: 60vh ;
+        margin-top: 30px;
+    }
+    .poster .avant img{
+        position: absolute;
+        height: 60vh;
+        width: 50%;
+        margin-left: 50%;
+    }
+    .poster .devant img{
+        position: absolute;
+        margin-left: 5%;
+        height: 15vh;
+        margin-top: 70px;
+    }
+    .poster .texto{
+        position: absolute;
+        margin-top: 13%;
+        margin-left: 7%;
+    }
+    .poster .texto ul{
+        display: flex;
+        flex-direction: column;
+        color: #fff;
+        font-size: 20px;
+    }
+    .poster .texto li{
+        margin-top: 10px;
+    }
+    .poster button{
+        color: rgb(45, 100, 230);
+        background-color: gainsboro;
+        border-color: gainsboro;
+        height: 40px;
+        width: 230px;
+        margin-top: 25%;
+        margin-left: 7%;
+        border-radius: 20px;
+        font-size: large;
+    }
+    .flooter{
+        justify-content: center;
+    }
+    .flooter .floot{
+        margin-top: 5%;
+        margin-left: 40%;
+    }
+    .flooter .flot{
+        margin-top: 20px;
+    }
+    .flooter .flot p{
+        margin-left: 30%;
+        width: 44%;
+        text-align: center;
+    }
+    .acte8{
+        display: flex;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        
+    }
+    .sans .sons{
+        margin-top: 60px;
+    }
+    .sans .sors{
+        margin-left: 3%;
+        margin-top: 20px;
+    }
+    .sans .sort{
+        margin-left: 3%;
+        width: 70%;
+        margin-top: 30px;
+    }
+    .sans .sork{
+        margin-left: 2%;
+        margin-top: 30px;
+    }
+    .sans button{
+        height: 40px;
+        width: 200px;
+        border-color: rgb(45, 100, 230);
+        border-radius: 20px;
+        background-color: rgb(45, 100, 230);
+        color: #fff;
+        font-size: large;
+    }
+    .fin{
+        background-color: #eeee;
+        height: 50vh;
+    }
+    .fin .fini{
+        margin-left: 40%;
+    }
+    .fin h1{
+        position: absolute;
+        margin-top: 5%;
+    }
+    .debit{
+        display: flex;
+        
+    }
+    .debit .icons{
+        align-items: center;
+        width: 10%;
+        margin-top: -35%;
+    }
+    .debit img{
+        margin-top: 20%;
+        margin-left: 500px;
+        position: absolute;
+    }
+
+    
+
+
+.footer {
+    background-color: #00439c;
+    height: 85vh;
+}
+
+.container__footer .item {
+    margin-top: 70px;
+}
+
+.container__footer .item img {
+    width: 100px;
+}
+
+.footer .content ul {
+    margin-top: 80px;
+    margin-left: 20px;
+    width: 40%;
+    font-size: 22px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .content a {
+    color: white;
+    font-size: 13px;
+}
+
+.footer .content .item img {
+    width: 50px;
+    margin-left: 190px;
+}
+
+.footer .content span {
+    display: block;
+    color: white;
+    width: 35%;
+    margin-left: 190px;
+    font-size: 14px;
+}
+
+
+
+.row {
+    display: flex;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  .btw{
+    justify-content: space-between;
+  }
+  .arnd{
+    justify-content: space-around;
+  }
+  .evly{
+    justify-content: space-evenly;
+  }
+  .algn-hzt{
+    align-items: center;
+  }
+  .algn-vrtl{
+    justify-content: center;
+  }
+  
+  
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    /* font-family: 'Old Standard TT', serif; */
+    
+    font-family: sstLight;
+}
